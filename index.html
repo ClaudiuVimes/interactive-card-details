@@ -7,9 +7,104 @@
     <title></title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/favicon-32x32.png"
+    />
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="assets/js/vue.global.prod.min.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section
+        class="payment grid-column-flow"
+        aria-labelledby="Section holding the form required to add card payment informations."
+      >
+        <div class="cards_container">
+          <div class="card-front">
+            <img
+              class="card-front_logo"
+              loading="eager"
+              decoding="async"
+              src="assets/images/card-logo.svg"
+              alt="Card company's logo. In this case, 2 circles, 1 filled with white color"
+            />
+            <span class="card-front_number">0000 0000 0000 0000</span>
+            <span class="card-front_name">Jane Appleseed</span>
+            <span class="card-front_expiry">00/00</span>
+            <img
+              class="card-front_bg"
+              loading="eager"
+              decoding="async"
+              src="assets/images/bg-card-front.png"
+              alt="Background image for the card. A gradient from purple to orange."
+            />
+          </div>
+          <div class="card-back">
+            <span class="card-back_cvc">000</span>
+            <img
+              class="card-back_bg"
+              loading="eager"
+              decoding="async"
+              src="assets/images/bg-card-back.png"
+              alt="Background image for the card. A grey color."
+            />
+          </div>
+        </div>
+        <form class="form-payment" method="POST">
+          <div class="form_input">
+            <label for="name">cardholder name</label>
+            <input
+              type="text"
+              title="name"
+              placeholder="e.g. Jane Appleseed"
+              pattern="(/^[A-Za-z]+$/)"
+            />
+          </div>
+          <div class="form_input">
+            <label for="number">card number</label>
+            <input
+              type="text"
+              title="number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              pattern="(/^\d+$/)"
+            />
+          </div>
+          <div class="form_input__row">
+            <div class="form_input">
+              <label for="date">exp. date (mm/yy)</label>
+              <input
+                type="text"
+                title="date"
+                placeholder="MM"
+                pattern="(/^\d+$/)"
+                minlength="2"
+                maxlength="2"
+              />
+              <input
+                type="text"
+                title="date"
+                placeholder="YY"
+                pattern="(/^\d+$/)"
+                minlength="2"
+                maxlength="2"
+              />
+            </div>
+            <div class="form_input">
+              <label for="cvc">cvc</label>
+              <input
+                type="text"
+                title="cvc"
+                placeholder="e.g. 123"
+                pattern="(/^\d+$/)"
+              />
+            </div>
+          </div>
+          <button class="button form-payment_submit">confirm</button>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
